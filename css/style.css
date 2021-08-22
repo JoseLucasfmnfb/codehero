@@ -1,0 +1,23 @@
+@import url('structure.css');
+@import url('style.css');
+@import url('header.css');
+@import url('footer.css');
+@import url('main.css');
+
+@font-face {
+    font-family: 'PTSans';
+    src: url('./fonts/PTSans-Regular.ttf') format('truetype'); 
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    src: url('../fonts/PTSans-Bold.ttf') format('truetype'); 
+    font-weight: 700;
+}
+
+body{
+    font-family: 'PTSans';
+    font-weight: 400;
+    color: #555;
+}

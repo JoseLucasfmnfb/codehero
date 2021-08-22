@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./javascript/md5.js"></script>
+    <script src="./javascript/index.js"></script>
+    <title>Projeto Code Hero</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <figure>
+                <img src="./images/logo.png" alt="" class="img-responsive">
+            </figure>
+        </div>
+        <div class="nome">
+            <h1>
+                <b>José Lucas Toledo Oliveira</b>
+                <span>Teste de Front-end</span>
+            </h1>
+        </div>
+    </header>
+    <main>
+        <section>
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-8 col-12 div-busca">
+                            <h2>
+                                Busca de personagens
+                            </h2>
+                            <span>
+                                Nome do personagem
+                            </span>
+                            <div class="wrapper-busca">
+                                <input type="text" placeholder="Search">
+                                <button></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <ul id="ul_title">
+                                <li>
+                                    Personagem
+                                </li>
+                                <li>
+                                    Séries
+                                </li>
+                                <li>
+                                    Eventos
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <ul id="ul_characters">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul id="ul_pagination">
+                        <li><button id="first_page" class="arrow-btn desativo"><<</button></li>
+                        <li><button id="prev_page" class="arrow-btn desativo"><</button></li>
+                        <li><button class="change_page" data-page_number="1">1</button></li>
+                        <li><button class="change_page" data-page_number="2">2</button></li>
+                        <li><button class="change_page" data-page_number="3">3</button></li>
+                        <li><button class="change_page" data-page_number="4">4</button></li>
+                        <li><button class="change_page" data-page_number="5">5</button></li>
+                        <li><button id="next_page" class="arrow-btn">></button></li>
+                        <li><button id="last_page" class="arrow-btn">>></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

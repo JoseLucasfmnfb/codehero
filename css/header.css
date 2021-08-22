@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+}
+
+header .logo{
+    max-width: 20%;
+}
+
+header .logo figure{
+    max-width: 96px;
+    margin: 0;
+}
+
+header .nome h1{
+    font-size: 14px;
+}
+
+header .nome h1 b{
+    font-weight: 700;
+}
+
+header .nome h1 span{
+    font-weight: 400;
+}

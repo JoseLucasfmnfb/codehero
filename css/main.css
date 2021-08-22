@@ -1,0 +1,83 @@
+main{
+    background-color: #E5E5E5;
+}
+
+main .div-busca{
+    padding-bottom: 40px;
+}
+
+main .div-busca h2{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+main .div-busca span{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+main .div-busca .wrapper-busca input{
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+main ul{
+    padding: 0;
+    list-style: none;
+}
+
+main #ul_title{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 24px;
+    margin: 0;
+}
+
+main #ul_title li{
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    color: #8E8E8E;
+    font-size: 12px;
+}
+
+main #ul_characters li{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 5px #00000033;
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-bottom: 8px;
+}
+
+main #ul_characters li .div-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    align-items: center;
+}
+
+main #ul_characters li .div-content figure{
+    max-width: 48px;
+    border-radius: 4px;
+    margin: 0;
+}
+
+main #ul_characters li .div-content figure img{
+    border-radius: 4px;
+}
+
+main #ul_characters li .div-content{
+    font-size: 14px;
+}
+
+main #ul_characters li .div-content span{
+    padding-left: 24px;
+    color: #555555;
+    font-size: 16px;
+    font-weight: 700;
+}
