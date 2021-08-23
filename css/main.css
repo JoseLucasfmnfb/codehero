@@ -140,6 +140,23 @@ main #div_detail .wrapper_details .wrapper_info .comics{
     padding-bottom: 10px;
 }
 
+main #div_detail .wrapper_not_found{
+    width: 100%;
+    height: calc(100vh - 161px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+main #div_detail .wrapper_not_found .message{
+    font-size: 34px;
+    font-weight: 700;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 50px;
+}
+
 @media (max-width: 767px) {
     main{
         height: calc(100vh - 180px);

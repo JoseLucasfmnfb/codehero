@@ -17,6 +17,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     let offset = await 0
     await getHeroes(offset)
     createList()
+
+    var inputSearch = document.getElementById('input_search');
+    inputSearch.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("btn_search").click();
+        }
+    });
 });
 
 async function getHeroes(offset){
@@ -133,54 +141,65 @@ function mountDetailedPage(){
     let wrapper_btn_back = document.getElementById('wrapper_btn_back')
     wrapper_btn_back.classList.remove('d-none')
     row_detail.classList.remove('d-none')
-    let wrapper_details = document.createElement('div')
-    wrapper_details.classList.add('wrapper_details')
-    div_detail.appendChild(wrapper_details)
-    let wrapper_image = document.createElement('div')
-    wrapper_image.classList.add('wrapper_image')
-    wrapper_details.appendChild(wrapper_image)
-    let figure = document.createElement('figure')
-    wrapper_image.appendChild(figure)
-    let img = document.createElement('img')
-    img.src = '' + dataDetailedCharacter.data.results[0].thumbnail.path + '.' + dataDetailedCharacter.data.results[0].thumbnail.extension + ''
-    img.classList.add('img-responsive')
-    figure.appendChild(img)
-    let wrapper_info = document.createElement('div')
-    wrapper_info.classList.add('wrapper_info')
-    wrapper_details.appendChild(wrapper_info)
-    let title = document.createElement('h2')
-    wrapper_info.appendChild(title)
-    title.innerHTML = dataDetailedCharacter.data.results[0].name
-    let description = document.createElement('div')
-    description.classList.add('description')
-    description.innerHTML = dataDetailedCharacter.data.results[0].description
-    wrapper_info.appendChild(description)
-    let stories = document.createElement('div')
-    stories.classList.add('stories')
-    wrapper_info.appendChild(stories)
-    let text_stories = '<b>Stories: </b>'
-    dataDetailedCharacter.data.results[0].stories.items.forEach(stories_ => {
-        text_stories += '' + stories_.name + ', '
-    });
-    stories.innerHTML = text_stories
     
-    let series = document.createElement('div')
-    series.classList.add('series')
-    wrapper_info.appendChild(series)
-    let text_series = '<b>Series: </b>'
-    dataDetailedCharacter.data.results[0].series.items.forEach(series_ => {
-        text_series += '' + series_.name + ', '
-    });
-    series.innerHTML = text_series
-    
-    let comics = document.createElement('div')
-    comics.classList.add('comics')
-    wrapper_info.appendChild(comics)
-    let text_comics = '<b>Comics: </b>'
-    dataDetailedCharacter.data.results[0].comics.items.forEach(comics_ => {
-        text_comics += '' + comics_.name + ', '
-    });
-    comics.innerHTML = text_comics
+    if (dataDetailedCharacter.data.results.length != 0) {
+        let wrapper_details = document.createElement('div')
+        wrapper_details.classList.add('wrapper_details')
+        div_detail.appendChild(wrapper_details)
+        let wrapper_image = document.createElement('div')
+        wrapper_image.classList.add('wrapper_image')
+        wrapper_details.appendChild(wrapper_image)
+        let figure = document.createElement('figure')
+        wrapper_image.appendChild(figure)
+        let img = document.createElement('img')
+        img.src = '' + dataDetailedCharacter.data.results[0].thumbnail.path + '.' + dataDetailedCharacter.data.results[0].thumbnail.extension + ''
+        img.classList.add('img-responsive')
+        figure.appendChild(img)
+        let wrapper_info = document.createElement('div')
+        wrapper_info.classList.add('wrapper_info')
+        wrapper_details.appendChild(wrapper_info)
+        let title = document.createElement('h2')
+        wrapper_info.appendChild(title)
+        title.innerHTML = dataDetailedCharacter.data.results[0].name
+        let description = document.createElement('div')
+        description.classList.add('description')
+        description.innerHTML = dataDetailedCharacter.data.results[0].description
+        wrapper_info.appendChild(description)
+        let stories = document.createElement('div')
+        stories.classList.add('stories')
+        wrapper_info.appendChild(stories)
+        let text_stories = '<b>Stories: </b>'
+        dataDetailedCharacter.data.results[0].stories.items.forEach(stories_ => {
+            text_stories += '' + stories_.name + ', '
+        });
+        stories.innerHTML = text_stories
+        
+        let series = document.createElement('div')
+        series.classList.add('series')
+        wrapper_info.appendChild(series)
+        let text_series = '<b>Series: </b>'
+        dataDetailedCharacter.data.results[0].series.items.forEach(series_ => {
+            text_series += '' + series_.name + ', '
+        });
+        series.innerHTML = text_series
+        
+        let comics = document.createElement('div')
+        comics.classList.add('comics')
+        wrapper_info.appendChild(comics)
+        let text_comics = '<b>Comics: </b>'
+        dataDetailedCharacter.data.results[0].comics.items.forEach(comics_ => {
+            text_comics += '' + comics_.name + ', '
+        });
+        comics.innerHTML = text_comics
+    }else{
+        let wrapper_not_found = document.createElement('div')
+        wrapper_not_found.classList.add('wrapper_not_found')
+        let message = document.createElement('div')
+        message.classList.add('message')
+        message.innerHTML = 'Nenhum personagem encontrado!'
+        div_detail.appendChild(wrapper_not_found)
+        wrapper_not_found.appendChild(message)
+    }
 }
 
 function dismountList(){
