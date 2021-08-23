@@ -1,5 +1,12 @@
 main{
     background-color: #E5E5E5;
+    height: calc(100vh - 161px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main section article{
+    display: flex;
 }
 
 main .div-busca{
@@ -16,11 +23,31 @@ main .div-busca span{
     font-weight: 400;
 }
 
+main .div-busca .wrapper-busca{
+    width: 295px;
+    position: relative;
+}
+
 main .div-busca .wrapper-busca input{
     background: #FFFFFF;
     border: 1px solid #E5E5E5;
     border-radius: 4px;
     padding: 8px 16px;
+    width: 100%;
+}
+
+main .div-busca .wrapper-busca button{
+    position: absolute;
+    right: 16px;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+}
+
+main .div-busca .wrapper-busca input:focus-visible{
+    border: 1px solid #E5E5E5;
+    outline: none;
 }
 
 main ul{
@@ -52,6 +79,7 @@ main #ul_characters li{
     border-radius: 4px;
     padding: 20px 24px;
     margin-bottom: 8px;
+    cursor: pointer;
 }
 
 main #ul_characters li .div-content{
@@ -76,8 +104,80 @@ main #ul_characters li .div-content{
 }
 
 main #ul_characters li .div-content span{
-    padding-left: 24px;
+    padding-left: 16px;
     color: #555555;
     font-size: 16px;
     font-weight: 700;
+}
+
+main #div_detail{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main #div_detail .wrapper_details{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main #div_detail .wrapper_details .wrapper_image{
+    width: 50%;
+}
+
+main #div_detail .wrapper_details .wrapper_info{
+    width: 50%;
+}
+
+main #div_detail .wrapper_details .wrapper_info .stories{
+    padding-bottom: 10px;
+}
+
+main #div_detail .wrapper_details .wrapper_info .series{
+    padding-bottom: 10px;
+}
+
+main #div_detail .wrapper_details .wrapper_info .comics{
+    padding-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+    main{
+        height: calc(100vh - 180px);
+    }
+
+    main .div-busca h2{
+        font-size: 24px;
+    }
+
+    main .div-busca span{
+        font-size: 14px;
+    }
+
+    main .div-busca .wrapper-busca{
+        width: 100%;
+    }
+
+    main #ul_title li:nth-of-type(2){
+        display: none;
+    }
+
+    main #ul_title li:last-of-type{
+        display: none;
+    }
+
+    main #ul_characters li .div-content{
+        width: 100%;
+    }
+
+    main #ul_characters li .div-content span{
+        font-size: 14px;
+    }
+
+    main #div_detail .wrapper_details .wrapper_image{
+        width: 100%;
+    }
+    
+    main #div_detail .wrapper_details .wrapper_info{
+        width: 100%;
+    }
 }

@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'PTSans';
-    src: url('./fonts/PTSans-Regular.ttf') format('truetype'); 
+    src: url('../fonts/PTSans-Regular.ttf') format('truetype'); 
     font-weight: 400;
 }
 
@@ -16,8 +16,13 @@
     font-weight: 700;
 }
 
+html{
+    overflow: hidden;
+}
+
 body{
     font-family: 'PTSans';
     font-weight: 400;
     color: #555;
+    overflow: hidden;
 }

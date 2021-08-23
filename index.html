@@ -17,16 +17,17 @@
         </div>
         <div class="nome">
             <h1>
-                <b>José Lucas Toledo Oliveira</b>
+                <b id="candidate_name"></b>
                 <span>Teste de Front-end</span>
             </h1>
+            <div id="candidate_initials"></div>
         </div>
     </header>
     <main>
         <section>
             <article>
                 <div class="container">
-                    <div class="row">
+                    <div id="row_search" class="row">
                         <div class="col-lg-4 col-md-6 col-sm-8 col-12 div-busca">
                             <h2>
                                 Busca de personagens
@@ -35,12 +36,16 @@
                                 Nome do personagem
                             </span>
                             <div class="wrapper-busca">
-                                <input type="text" placeholder="Search">
-                                <button></button>
+                                <input id="input_search" type="text" placeholder="Search">
+                                <button onclick="searchHero()">
+                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div id="row_list" class="row">
                         <div class="col-12">
                             <ul id="ul_title">
                                 <li>
@@ -54,10 +59,11 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-12">
-                            <ul id="ul_characters">
-                            </ul>
+                        <div id="heroes_content" class="col-12">
                         </div>
+                    </div>
+                    <div id="row_detail" class="row d-none">
+                        <div id="div_detail" class="col-12"></div>
                     </div>
                 </div>
             </article>
@@ -67,17 +73,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <ul id="ul_pagination">
-                        <li><button id="first_page" class="arrow-btn desativo"><<</button></li>
-                        <li><button id="prev_page" class="arrow-btn desativo"><</button></li>
-                        <li><button class="change_page" data-page_number="1">1</button></li>
-                        <li><button class="change_page" data-page_number="2">2</button></li>
-                        <li><button class="change_page" data-page_number="3">3</button></li>
-                        <li><button class="change_page" data-page_number="4">4</button></li>
-                        <li><button class="change_page" data-page_number="5">5</button></li>
-                        <li><button id="next_page" class="arrow-btn">></button></li>
-                        <li><button id="last_page" class="arrow-btn">>></button></li>
-                    </ul>
+                    <div id="wrapper_btn_back" class="wrapper-btn-back d-none">
+                        <button class="primary-button" onclick="voltar()">Voltar</button>
+                    </div>
+                    <div id="ul_pagination">
+                        <button id="first_page" class="arrow-btn desativo" onclick="firstPage()"><<</button>
+                        <button id="prev_page" class="arrow-btn desativo" onclick="prevPage()"><</button>
+                        <button class="change_page ativo" data-page_number="1" onclick="setPage(this)">1</button>
+                        <button class="change_page" data-page_number="2" onclick="setPage(this)">2</button>
+                        <button class="change_page" data-page_number="3" onclick="setPage(this)">3</button>
+                        <button class="change_page xs-d-none" data-page_number="4" onclick="setPage(this)">4</button>
+                        <button class="change_page xs-d-none" data-page_number="5" onclick="setPage(this)">5</button>
+                        <button id="next_page" class="arrow-btn" onclick="nextPage()">></button>
+                        <button id="last_page" class="arrow-btn" onclick="lastPage()">>></button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -15,6 +15,27 @@ header .logo figure{
     margin: 0;
 }
 
+header .nome{
+    display: inline-flex;
+    align-items: center;
+}
+
+header .nome #candidate_initials{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    padding: 7px;
+    margin-left: 16px;
+    transition: all ease .3s;
+}
+
+header .nome #candidate_initials:hover{
+    background-color: #555555;
+    color: #fff;
+}
+
 header .nome h1{
     font-size: 14px;
 }
@@ -25,4 +46,14 @@ header .nome h1 b{
 
 header .nome h1 span{
     font-weight: 400;
+}
+
+@media (max-width: 767px) {
+    header .nome h1{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 12px;
+    }
 }

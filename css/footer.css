@@ -1,6 +1,7 @@
 footer{
     border-color: #fff;
     padding: 26px 0;
+    display: flex;
 }
 
 footer #ul_pagination{
@@ -11,24 +12,17 @@ footer #ul_pagination{
     justify-content: center;
 }
 
-footer #ul_pagination li{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-footer #ul_pagination li button{
+footer #ul_pagination button{
     cursor: pointer;
 }
 
-footer #ul_pagination li .arrow-btn{
+footer #ul_pagination .arrow-btn{
     border: none;
     background-color: #fff;
     margin: 0 4px;
 }
 
-footer #ul_pagination li .change_page{
+footer #ul_pagination .change_page{
     background-color: #E5E5E5;
     border: 1px solid #E5E5E5;
     transition: all ease .3s;
@@ -38,20 +32,37 @@ footer #ul_pagination li .change_page{
     border-radius: 4px;
 }
 
-footer #ul_pagination li .change_page:hover{
+@media (max-width: 565px){
+    footer #ul_pagination .change_page.xs-d-none{
+        display: none;
+    }
+}
+
+footer #ul_pagination .change_page:hover{
     background-color: #167ABC;
     border: 1px solid #167ABC;
     color: #fff;
 }
 
-footer #ul_pagination li .change_page.ativo{
+footer #ul_pagination .change_page.ativo{
     background-color: #167ABC;
     border: 1px solid #167ABC;
     color: #fff;
 }
 
-footer #ul_pagination li .change_page.desativo{
+footer #ul_pagination .arrow-btn.desativo{
     opacity: 0;
     visibility: hidden;
     z-index: -1;
+}
+
+footer #wrapper_btn_back{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+footer #wrapper_btn_back .primary-button{
+    cursor: pointer;
 }
